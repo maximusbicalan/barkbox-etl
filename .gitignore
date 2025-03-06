@@ -1,0 +1,4 @@
+archive
+venv/
+*.csv
+*.txt
