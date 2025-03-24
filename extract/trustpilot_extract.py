@@ -5,14 +5,14 @@ import requests
 import pandas as pd
 
 start_page = 1 
-end_page = 3 
-company_name = "aardy.com"
+end_page = 391 
+company_name = "barkbox.com"
 
 df_list = []
 df = pd.DataFrame(columns=['Name', 'Location', 'Review Heading', 'Review Body', 'Review Date', 'Star Rating'])
 for page_index in range(start_page, end_page+1):
     print("Scraping page: ", page_index)
-
+    "https://www.trustpilot.com/review/barkbox.com?page=34"
     url = f"https://www.trustpilot.com/review/{company_name}?page={page_index}"
 
     result = requests.get(url)
@@ -57,8 +57,8 @@ for page_index in range(start_page, end_page+1):
             print(f"Skipping a review due to missing elements on page {page_index}")
             continue
     #avoiding throttling
-    sleep(uniform(1.3,6.5))
-    print("Failed to scrape page: ", page_index)
+    sleep(uniform(2.33, 7.204))
+    print("Sleeping for a while...")
 df = pd.DataFrame(df_list)
 
 # save to csv
